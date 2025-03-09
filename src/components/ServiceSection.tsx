@@ -51,7 +51,10 @@ const ServiceSection = () => {
               </div>
               <div className="mt-3 md:space-y-10 space-y-[8px]">
                 {service.services.map((item, i) => (
-                  <h2 className="text-gray-400 text-lg font-semibold md:text-[100px] text-[80px] md:leading-[98px] leading-[76px]">
+                  <h2
+                    key={i}
+                    className="text-gray-400 text-lg font-semibold md:text-[100px] text-[80px] md:leading-[98px] leading-[76px]"
+                  >
                     {item}
                   </h2>
                 ))}

@@ -39,10 +39,10 @@ export default function SingleWork() {
           className="w-full object-cover md:h-[750px] h-[450px] rounded-xl"
           unoptimized
         />
-        <div className="flex flex-col items-center justify-center md:w-[586px] w-full md:py-20 py-10 space-y-6">
+        <div className="flex flex-col items-center justify-center max-w-3xl w-full md:py-20 py-10 space-y-6">
           <h4 className="text-[42px] leading-[42px] tracking-[-0.02em] uppercase text-start font-semibold">
             <span className="md:hidden">
-              The client's <br />
+              {`The client's`} <br />
               goal was to <br />
               create a brand <br /> identity that
               <br /> would resonate
@@ -54,17 +54,14 @@ export default function SingleWork() {
               help position.
             </span>
             <span className="hidden md:inline">
-              The client's goal was to
-              <br /> create a brand identity that
-              <br /> would resonate with
-              <br /> environmentally conscious
-              <br /> consumers and help
-              <br /> position.
+              {`The client's goal was to create a brand identity that would
+              resonate with environmentally conscious consumers and help
+              position.`}
             </span>
           </h4>
           <p className="text-2xl leading-[30px] tracking-[-0.02em] text-gray-500">
             <span className="md:hidden">
-              The client's goal was to create a <br />
+              {`The client's goal was to create a`} <br />
               brand identity that would resonate <br />
               with environmentally conscious <br />
               consumers and help position their <br />
@@ -74,11 +71,11 @@ export default function SingleWork() {
               driving customer engagement.
             </span>
             <span className="hidden md:inline">
-              The client's goal was to create a brand identity that would
+              {`The client's goal was to create a brand identity that would
               resonate with environmentally conscious consumers and help
               position their business as a leader in sustainable practices.
               Objectives included increasing brand awareness and driving
-              customer engagement.
+              customer engagement.`}
             </span>
           </p>
         </div>

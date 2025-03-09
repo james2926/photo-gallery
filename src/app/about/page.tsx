@@ -172,7 +172,7 @@ export default function About() {
             </span>
           </h3>
           <p className="text-gray-500 text-2xl leading-[30px] tracking-[-0.02em]">
-            The client's goal was to create a brand identity that would resonate
+            {`The client's goal was to create a brand identity that would resonate
             with environmentally conscious consumers and help position their
             business as a leader in sustainable practices. Objectives included
             increasing brand awareness and driving customer engagement.
@@ -181,7 +181,7 @@ export default function About() {
             The client's goal was to create a brand identity that would resonate
             with environmentally conscious consumers and help position their
             business as a leader in sustainable practices. Objectives included
-            increasing brand awareness and driving customer engagement.
+            increasing brand awareness and driving customer engagement.`}
           </p>
         </div>
         <motion.div

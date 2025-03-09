@@ -45,9 +45,9 @@ export default function Contact() {
                 I’LL REPLY WITHIN 12 HOURS.
               </h2>
               <p className="text-gray-500 mt-4 text-base leading-[30px] tracking-[0.02em]">
-                The client's goal was to create a brand identity that would
+                {`The client's goal was to create a brand identity that would
                 resonate with environmentally conscious consumers and help
-                position their business as a leader.
+                position their business as a leader.`}
               </p>
               <div className="flex md:flex-row flex-col items-start gap-4">
                 <div className="flex flex-row gap-4">
