@@ -23,13 +23,21 @@ const works = [
 
 const WorksSection = () => {
   return (
-    <section className="bg-black py-16 px-10">
-      <div className="flex items-start justify-between">
-        <h2 className="text-white font-bold" style={{ fontSize: "100px" }}>
+    <section className="bg-black py-16 md:px-10 px-4">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-10">
+        <h2 className="text-white font-bold md:text-[100px] text-[80px]">
           WORKS
         </h2>
-        <h4 className="text-white" style={{ fontSize: "42px" }}>
-          PHOTOGRAPHER BASED <br /> IN OSAKA — TOKYO
+        <h4
+          className="text-gray-500 font-semibold"
+          style={{ fontSize: "42px", lineHeight: "1" }}
+        >
+          <span className="hidden md:inline">
+            PHOTOGRAPHER BASED <br /> IN OSAKA — TOKYO
+          </span>
+          <span className="md:hidden">
+            PHOTOGRAPHER <br /> BASED IN OSAKA <br />— TOKYO
+          </span>
         </h4>
       </div>
       <div className="grid gap-10 md:grid-cols-1">

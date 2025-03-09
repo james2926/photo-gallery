@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white border-t border-gray-800">
       <div className="flex flex-col lg:flex-row w-full justify-between">
-        <div className="lg:w-1/4 w-full p-10">
+        <div className="lg:w-1/4 w-full md:px-10 md:py-10 px-4 py-10">
           <Image
             src="/images/logo.png"
             alt="BLURR Logo"
@@ -16,16 +16,13 @@ const Footer = () => {
           />
         </div>
         <div className="lg:w-3/4 border-l border-gray-800 flex flex-col">
-          <div
-            className="font-semibold flex items-end p-10 h-[300px] ml-auto"
-            style={{ fontSize: "42px", lineHeight: "42px" }}
-          >
+          <div className="font-semibold flex items-end md:p-10 p-4 h-[300px] md:ml-auto ml-0 text-[42px] leading-[42px]">
             HELLO@
             <br />
             BLURR.IO
           </div>
 
-          <div className="flex justify-between items-center p-10 border-t border-gray-800">
+          <div className="flex flex-col md:flex-row justify-between md:items-center items-start md:p-10 p-4 border-t border-gray-800 space-y-6 md:space-y-0">
             <div className="flex space-x-6">
               <a
                 href="#"
