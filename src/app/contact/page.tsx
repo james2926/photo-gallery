@@ -2,6 +2,7 @@
 
 import Footer from "@/components/Footer";
 import SubHeader from "@/components/SubHeader";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Contact() {
@@ -9,24 +10,35 @@ export default function Contact() {
     <>
       <SubHeader />
       <div className="bg-black md:px-10 px-4 md:pt-16 pt-8 md:pb-[250px] pb-[120px] md:space-y-20 space-y-12">
-        <section className="flex flex-col items-center justify-center md:space-y-16 space-y-8">
+        <motion.section
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col items-center justify-center md:space-y-16 space-y-8"
+        >
           <div className="w-full">
-            <h1 className="text-white md:text-[269px] text-[80px] md:leading-[213px] leading-[76px] font-semibold uppercase">
-              get in touch
+            <h1 className="text-white md:text-[269px] text-[80px] md:leading-[213px] leading-[76px] tracking-[-0.04em] font-semibold uppercase">
+              get in <br />
+              touch
             </h1>
           </div>
           <Image
             src="/images/contact/contact-bg.png"
             alt="contact-bg"
             width={100}
-            height={100}
+            height={650}
             className="w-full md:h-[650px] h-[350px] object-cover rounded-2xl opacity-70"
             unoptimized
           />
-        </section>
+        </motion.section>
         <div className="bg-black text-white min-h-screen flex items-center justify-center">
           <div className="w-full grid md:grid-cols-2 md:gap-[120px] md:space-y-0 space-y-10">
-            <div className="space-y-8">
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="space-y-8"
+            >
               <h2 className="text-[42px] leading-[42px] font-semibold">
                 HAVE AN IDEA? LET ME KNOW <br />
                 WHAT’S ON YOUR MIND. <br />
@@ -50,8 +62,13 @@ export default function Contact() {
                   MEDIUM
                 </button>
               </div>
-            </div>
-            <div className="bg-black rounded-md">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="bg-black rounded-md"
+            >
               <form className="space-y-10">
                 <div className="space-y-8">
                   <input
@@ -80,7 +97,7 @@ export default function Contact() {
                   SEND
                 </button>
               </form>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

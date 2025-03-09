@@ -2,6 +2,7 @@
 
 import Footer from "@/components/Footer";
 import SubHeader from "@/components/SubHeader";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 type ImageGridProps = {
@@ -28,14 +29,25 @@ export default function Blog() {
     <>
       <SubHeader />
       <div className="bg-black md:px-10 px-4 md:pt-16 pt-8 md:pb-[150px] pb-[120px] md:space-y-20 space-y-12">
-        <div className="w-full">
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-full"
+        >
           <h1 className="text-white md:text-[349.3px] text-[80px] md:leading-[284.2px] leading-[76px] font-semibold uppercase">
             blog
           </h1>
-        </div>
+        </motion.div>
         <div className="grid md:grid-cols-3 grid-cols-1 gap-10 bg-black text-white">
           {images.map((image, index) => (
-            <div key={index} className="relative">
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              key={index}
+              className="relative"
+            >
               <Image
                 src={image.src}
                 alt={image.alt}
@@ -47,7 +59,7 @@ export default function Blog() {
               <div className="bottom-0 left-0 w-full md:p-6 p-4 border-gray-500 border-2 border-t-0 bg-black bg-opacity-50 md:text-[30px] text-2xl md:leading-[34px] text-start font-semibold rounded-b-2xl opacity-70">
                 THE POWER OF VISUAL IDENTITY: HOW BRANDING TRANSFORMS BUSINESSES
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

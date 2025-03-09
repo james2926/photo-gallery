@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 interface WorkCardProps {
@@ -12,7 +13,13 @@ const WorkCard: React.FC<WorkCardProps> = ({
   description,
 }) => {
   return (
-    <div className="relative w-full overflow-hidden rounded-xl shadow-lg">
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      transition={{ duration: 0.5, delay: 0.5 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="relative w-full overflow-hidden rounded-xl shadow-lg"
+    >
       <div className="relative">
         <Image
           src={imageSrc}
@@ -30,7 +37,7 @@ const WorkCard: React.FC<WorkCardProps> = ({
           {description}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
