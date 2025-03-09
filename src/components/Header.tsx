@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Header = () => {
   const [imageHeight, setImageHeight] = useState(0);
@@ -73,9 +74,12 @@ const Header = () => {
             </span>
           </h4>
 
-          <button className="mt-4 md:mt-0 flex items-center gap-2 px-5 py-2 border-2 border-white rounded-full text-white text-md md:text-lg font-semibold hover:bg-white hover:text-black transition-all">
+          <Link
+            href="/contact"
+            className="mt-4 md:mt-0 flex items-center gap-2 px-5 py-2 border-2 border-white rounded-full text-white text-md md:text-lg font-semibold hover:bg-white hover:text-black transition-all"
+          >
             Get in Touch <ArrowUpRight size={20} />
-          </button>
+          </Link>
         </motion.div>
       </div>
     </header>
