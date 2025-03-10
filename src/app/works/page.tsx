@@ -1,7 +1,7 @@
 "use client";
 
 import SubHeader from "@/components/SubHeader";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import WorkCard from "@/components/WorkCard";
 import { motion } from "framer-motion";
 import clsx from "clsx";
@@ -9,25 +9,30 @@ import Footer from "@/components/Footer";
 
 const categories = ["ALL", "FASHION", "ART", "CINEMA", "ADVERTISEMENT"];
 
-const works = [
-  {
-    title: "KOZMO",
-    imageSrc: "/images/Works Card.png",
-    description: "AI RESEARCH TOOL",
-  },
-  {
-    title: "KOZMO",
-    imageSrc: "/images/Works Card1.png",
-    description: "AI RESEARCH TOOL",
-  },
-  {
-    title: "KOZMO",
-    imageSrc: "/images/Works Card2.png",
-    description: "AI RESEARCH TOOL",
-  },
-];
+interface Work {
+  src: string;
+  category: string;
+  title: string;
+}
+
 export default function Work() {
   const [activeCategory, setActiveCategory] = useState("ALL");
+  const [works, setWorks] = useState<Work[]>([]);
+
+  useEffect(() => {
+    const fetchWorks = async () => {
+      const abortController = new AbortController();
+      const categoryParam =
+        activeCategory === "ALL" ? "all" : activeCategory.toLowerCase();
+      const response = await fetch(`/api/works?category=${categoryParam}`, {
+        signal: abortController.signal,
+      });
+      const data = await response.json();
+      setWorks(data);
+    };
+
+    fetchWorks();
+  }, [activeCategory]);
 
   return (
     <>
@@ -61,7 +66,7 @@ export default function Work() {
         </motion.div>
 
         <div className="grid gap-10 mt-10 md:grid-cols-1">
-          {works.map((work, index) => (
+          {works.map((work: Work, index: number) => (
             <WorkCard key={index} {...work} />
           ))}
         </div>
